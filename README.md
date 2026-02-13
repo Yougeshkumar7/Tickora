@@ -1,0 +1,2 @@
+# Tickora
+Daily habit tracker
