@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';">
+    <meta name="description" content="Tickora - Your Daily Habit Tracker">
+    <title>Tickora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-text">
+                <h1>Tickora</h1>
+                <p>Your Daily Habit Tracker</p>
+            </div>
+            <button id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Dark/Light Mode">🌙</button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+
+        <!-- Date Display -->
+        <section class="date-section">
+            <h2 id="dateDisplay"></h2>
+        </section>
+
+        <!-- Progress Section -->
+        <section class="progress-section">
+            <h2>Today's Progress</h2>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <p class="percentage-text" id="percentageText">0% completed</p>
+            <!-- Small Streak Display -->
+            <div class="streak-small">
+                <span>🔥 Streak: <strong id="currentStreak">0</strong> days</span>
+            </div>
+        </section>
+
+        <!-- Activities Section -->
+        <section class="activities-section">
+            <h2>Your Activities</h2>
+
+            <div class="add-activity-form" id="addActivityForm" style="display: none;">
+                <input type="text" id="activityInput" placeholder="Enter activity name">
+                <div class="form-buttons">
+                    <button class="save-btn" id="saveActivityBtn">Save</button>
+                    <button class="cancel-btn" id="cancelActivityBtn">Cancel</button>
+                </div>
+            </div>
+
+            <ul class="activity-list" id="activityList">
+                <!-- Activities will be added here dynamically -->
+            </ul>
+
+            <button class="add-btn" id="addActivityBtn">+ Add Activity</button>
+        </section>
+
+        <!-- Suggestions Section -->
+        <section class="suggestions-section">
+            <h2>You can add</h2>
+            <div class="suggestions" id="suggestions">
+                <!-- Suggestions will be added here dynamically -->
+            </div>
+        </section>
+
+        <!-- Monthly Calendar View -->
+        <section class="calendar-section">
+            <h2>Monthly Activity History</h2>
+            <div class="calendar-container" id="calendarContainer">
+                <!-- Calendar will be generated here -->
+            </div>
+            <div class="calendar-legend">
+                <div class="legend-item">
+                    <span class="legend-box completed"></span>
+                    <span>Completed</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-box partial"></span>
+                    <span>Partial</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-box empty"></span>
+                    <span>Not Started</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Weekly Summary Section -->
+        <section class="weekly-section">
+            <h2>Weekly Summary</h2>
+            <div class="weekly-stats" id="weeklyStats">
+                <div class="stat-item">
+                    <span class="stat-label">Perfect Days:</span>
+                    <span class="stat-value" id="weeklyCompletedDays">0</span>
+                    <span class="stat-total">/ 7 days</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Average Completion:</span>
+                    <span class="stat-value" id="weeklyOverall">0%</span>
+                </div>
+                <div class="stat-explanation">
+                    <p>Perfect Days = Days with 100% activities completed</p>
+                    <p>Average = Overall completion percentage for the week</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Monthly Summary Section -->
+        <section class="monthly-section">
+            <h2>Monthly Summary</h2>
+            <div class="monthly-stats" id="monthlyStats">
+                <div class="stat-item">
+                    <span class="stat-label">Perfect Days:</span>
+                    <span class="stat-value" id="monthlyCompletedDays">0</span>
+                    <span class="stat-total">/ <span id="monthlyTotalDays">0</span> days</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Average Completion:</span>
+                    <span class="stat-value" id="monthlyOverall">0%</span>
+                </div>
+                <div class="stat-explanation">
+                    <p>Perfect Days = Days with 100% activities completed</p>
+                    <p>Average = Overall completion percentage for the month</p>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 Tickora</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
